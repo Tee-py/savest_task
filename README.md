@@ -1,1 +1,1 @@
-# A Code to demonstrate how to extend django Admin
+# A Project to extend django Built in Admin Functionalities
