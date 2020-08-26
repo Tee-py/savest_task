@@ -1,0 +1,55 @@
+<style>
+    .addlink {
+        display: none;
+    }
+
+    .object-tools a.addlink {
+        display: none;
+    }
+
+    .m-cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .m-bx {
+        text-align: center;
+    }
+
+    .object-tools a:link, .object-tools a:visited {
+        display: none !important;
+    }
+
+    @media (max-width: 767px) {
+        .m-bx {
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+    }
+</style>
+{% extends "admin/change_list.html" %}
+
+
+{% load i18n %}
+
+{% block content_title %}
+    <h1 style="color: black;">User Metrics</h1>
+{% endblock %}
+
+{% block result_list %}
+    <div class="m-cont">
+        {% for metric in metrics %}
+            <div class="m-bx shadow">
+                <h1 style="color: green; font-size: 20px;">{{metric.Title}}</h1>
+                <p style="font-size: 20px;">{{metric.value}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block pagination %}
+{% endblock %}
